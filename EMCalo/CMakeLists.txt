@@ -24,16 +24,15 @@ include(${Geant4_USE_FILE})
 #----------------------------------------------------------------------------
 # Setup ROOT include directories and compile definitions
 #
-#find_package(ROOT REQUIRED)
-#include(${ROOT_USE_FILE})
+find_package(ROOT REQUIRED)
+include(${ROOT_USE_FILE})
                     
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 #
 include_directories(${PROJECT_SOURCE_DIR}/include 
                     ${Geant4_INCLUDE_DIR}
-                    #${ROOT_INCLUDE_DIR}
-                    )
+                    ${ROOT_INCLUDE_DIR})
                     #/usr/include)
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.h*)
@@ -42,7 +41,7 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.h*)
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(TrGEMG4 TrGEMG4.cc ${sources} ${headers})
-target_link_libraries(TrGEMG4 ${Geant4_LIBRARIES}) #${ROOT_LIBRARIES})
+target_link_libraries(TrGEMG4 ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -67,7 +66,7 @@ endforeach()
 # Add program to the project targets
 # (this avoids the need of typing the program name after make)
 #
-#add_custom_target(TrGEMG4 DEPENDS TrGEMG4)
+add_custom_target(TrGEMG4 DEPENDS TrGEMG4)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
