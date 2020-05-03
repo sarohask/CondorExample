@@ -4,6 +4,7 @@ hostname
 source /usr/local/root/bin/thisroot.sh
 export ROOTSYS=/usr/local/root
 export PATH=$PATH:$ROOTSYS/bin
+export PATH=$PATH:$ROOTSYS/cmake
 export PATH=$PATH:$ROOTSYS/include
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
 
