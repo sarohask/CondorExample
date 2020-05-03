@@ -2,6 +2,8 @@
 
 hostname
 source /usr/local/root/bin/thisroot.sh
+export PATH=$PATH:/usr/local/root/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/root/lib
 
 mkdir EMCalo_build
 cd EMCalo_build
