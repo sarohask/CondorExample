@@ -1,6 +1,7 @@
 #!/bin/sh
 
 hostname
+source /usr/local/root/bin/thisroot.sh
 
 mkdir EMCalo_build
 cd EMCalo_build
