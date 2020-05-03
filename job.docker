@@ -1,7 +1,7 @@
 universe = docker
 executable = ./condor_calo_sim_wrapper.sh
 transfer_input_files=EMCalo
-docker_image = wiso/condordockergeant4example
+docker_image = sarohaks/condorexample
 request_memory = 6000
 
 should_transfer_files = YES
