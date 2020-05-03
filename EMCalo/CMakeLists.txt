@@ -9,6 +9,12 @@ project(TrGEMG4)
 # You can set WITH_GEANT4_UIVIS to OFF via the command line or ccmake/cmake-gui
 # to build a batch mode only executable
 #
+#----------------------------------------------------------------------------
+# Setup ROOT include directories and compile definitions
+#
+find_package(ROOT REQUIRED)
+include(${ROOT_USE_FILE})
+
 option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" ON)
 if(WITH_GEANT4_UIVIS)
   find_package(Geant4 REQUIRED ui_all vis_all)
@@ -20,12 +26,6 @@ endif()
 # Setup Geant4 include directories and compile definitions
 #
 include(${Geant4_USE_FILE})
-
-#----------------------------------------------------------------------------
-# Setup ROOT include directories and compile definitions
-#
-find_package(ROOT REQUIRED)
-include(${ROOT_USE_FILE})
                     
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
@@ -66,7 +66,7 @@ endforeach()
 # Add program to the project targets
 # (this avoids the need of typing the program name after make)
 #
-add_custom_target(TrGEMG4 DEPENDS TrGEMG4)
+#add_custom_target(TrGEMG4 DEPENDS TrGEMG4)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
