@@ -2,6 +2,7 @@
 
 hostname
 source /usr/local/root/bin/thisroot.sh
+export CMAKE_PREFIX_PATH=/usr/local/root
 export ROOTSYS=/usr/local/root
 export PATH=$PATH:$ROOTSYS/bin
 export PATH=$PATH:$ROOTSYS/cmake
